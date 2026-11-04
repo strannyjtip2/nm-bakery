@@ -1,7 +1,7 @@
 <!doctype html><html lang="ru"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>NM Bakery</title>
-<link rel="manifest" href="manifest.json?v=4">
+<link rel="manifest" href="manifest.json?v=5">
 <link rel="apple-touch-icon" href="icon-180-v3.png">
 <link rel="icon" type="image/png" href="icon-192-v3.png">
 <meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
@@ -9,7 +9,11 @@
 <meta name="theme-color" content="#E7DDC2">
 <style>html,body{margin:0;height:100%;background:#E7DDC2;font-family:-apple-system,Roboto,sans-serif}
 .w{min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px}
-img{width:60vw;max-width:280px}a{background:#111;color:#E7DDC2;text-decoration:none;font-size:22px;padding:16px 56px;border-radius:14px}</style>
-</head><body><div class="w"><img src="logo-v3.png" alt="NM Bakery"><a id="go" href="https://script.google.com/macros/s/AKfycbxp1VblNLn1bVUU5kw1I5jLQxNnCPFKzh-Msr40iOCZGWo5mBzkpGoSrS_3MHSct3uT/exec">Открыть</a>
+img{width:60vw;max-width:280px}a{background:#111;color:#E7DDC2;text-decoration:none;font-size:22px;padding:16px 56px;border-radius:14px}#f{position:fixed;top:env(safe-area-inset-top);left:0;right:0;bottom:0;width:100%;height:calc(100dvh - env(safe-area-inset-top));border:0;background:#E7DDC2}#fb{display:none;position:fixed;bottom:calc(24px + env(safe-area-inset-bottom));left:0;right:0;text-align:center;z-index:2}</style>
+</head><body><div class="w"><img src="logo-v3.png" alt="NM Bakery"><a id="go" href="./?app=1">Открыть</a>
 <p style="margin:0 24px;text-align:center;font-size:17px;color:#333">Чтобы добавить иконку: нажмите «Поделиться» → «На экран Домой»</p></div>
-<script>(function(){var u="https://script.google.com/macros/s/AKfycbxp1VblNLn1bVUU5kw1I5jLQxNnCPFKzh-Msr40iOCZGWo5mBzkpGoSrS_3MHSct3uT/exec";function mm(q){return window.matchMedia&&matchMedia(q).matches}if(/[?&]app=1/.test(location.search)||navigator.standalone===true||mm("(display-mode: standalone)")||mm("(display-mode: fullscreen)")||mm("(display-mode: minimal-ui)"))location.replace(u)})()</script></body></html>
+<script>(function(){var u="https://script.google.com/macros/s/AKfycbxp1VblNLn1bVUU5kw1I5jLQxNnCPFKzh-Msr40iOCZGWo5mBzkpGoSrS_3MHSct3uT/exec";function mm(q){return window.matchMedia&&matchMedia(q).matches}
+if(!(/[?&]app=1/.test(location.search)||navigator.standalone===true||mm("(display-mode: standalone)")||mm("(display-mode: fullscreen)")||mm("(display-mode: minimal-ui)")))return;
+document.body.innerHTML='<iframe id="f" src="'+u+'" allow="camera; microphone; clipboard-read; clipboard-write" title="NM Bakery"></iframe><div id="fb"><a href="'+u+'">Открыть напрямую</a></div>';
+var ok=false;document.getElementById("f").onload=function(){ok=true};
+setTimeout(function(){if(!ok)document.getElementById("fb").style.display="block"},15000)})()</script></body></html>
